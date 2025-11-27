@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import './home.css';
 import logo from '../../assets/images/logo.png';
-import images1850s from '../../assets/database/1850s/images.json';
-import images1860s from '../../assets/database/1860s/images.json';
-import images1870s from '../../assets/database/1870s/images.json';
-import images1880s from '../../assets/database/1880s/images.json';
-import images1890s from '../../assets/database/1890s/images.json';
-import images1900s from '../../assets/database/1900s/images.json';
-import images1910s from '../../assets/database/1910s/images.json';
-import images1920s from '../../assets/database/1920s/images.json';
-import images1930s from '../../assets/database/1930s/images.json';
-import images1940s from '../../assets/database/1940s/images.json';
 import close from '../../assets/images/close.png';
+import imagesData from '../../assets/database/database.json';
 
-const decadeImageMap = {
-  "1850": images1850s,
-  "1860": images1860s,
-  "1870": images1870s,
-  "1880": images1880s,
-  "1890": images1890s,
-  "1900": images1900s,
-  "1910": images1910s,
-  "1920": images1920s,
-  "1930": images1930s,
-  "1940": images1940s
-}
+const imageContext = require.context('../../assets/database/images', false, /\.(jpe?g|png|svg|webp)$/i);
+
+const imageMap = imageContext.keys().reduce((map, key) => {
+    const fileName = key.replace('./', '');
+    map[fileName] = imageContext(key);
+    return map;
+}, {});
 
 export const Home = () => {
   const [year, setYear] = useState(1900);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [activeFilters, setActiveFilters] = useState([]);
+  const [activeFilters, setActiveFilters] = useState(['fashionplate', 'photograph']);
   const [activeImage, setActiveImage] = useState(null);
   const decade = Math.floor(year / 10) * 10;
-  const images = decadeImageMap[decade];
+
+  const filteredImages = useMemo(() => {
+    const imagesWithPaths = imagesData.map(item => ({
+      ...item,
+      image: imageMap[item.image] || null
+    })).filter(item => item.image !== null);
+
+    const filteredByDecade = imagesWithPaths.filter(image => {
+        const imageDecade = parseInt(image.decade.replace('s', ''));
+        return imageDecade === decade;
+    });
+
+    return filteredByDecade.filter(image => {
+      return activeFilters.includes(image.type);
+    })
+  }, [decade, activeFilters]);
 
   const handleChange = (filtersOpen) => {
     setFiltersOpen(prev => !prev);
@@ -124,22 +125,32 @@ export const Home = () => {
                 <div className="name">winter</div>
               </div>
             </div>
+            <div className="type">
+              <div className="option" onClick={() => handleActive('fashionplate')}>
+                <div className={`box ${activeFilters.includes('fashionplate') ? 'box-active' : ''}`}></div>
+                <div className="name">fashionplate</div>
+              </div>
+              <div className="option" onClick={() => handleActive('photograph')}>
+                <div className={`box ${activeFilters.includes('photograph') ? 'box-active' : ''}`}></div>
+                <div className="name">photograph</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className="gallery">
         <div className={`images ${activeImage && 'images-shrink'}`} key={decade}>
-          {images.map(image => {
+          {filteredImages.map(image => {
             return (
-              <div className="image" onClick={() => setActiveImage(image)}>
-                <img key={image} src={image} alt="" className='item' />
+              <div key={image.id} className="image" onClick={() => setActiveImage(image)}>
+                <img src={image.image} alt="" className='item' />
               </div>
             )
           })}
         </div>
         <div className={`details ${activeImage && 'details-active'}`}>
           <div className="details__photo">
-            <img src={activeImage} alt="" className='details__img' />
+            <img src={activeImage?.image} alt="" className='details__img' />
           </div>
           <div className={`close ${activeImage && 'close-active'}`} onClick={() => setActiveImage(null)}>
             <img src={close} alt="" className='close__sign' />
@@ -147,10 +158,10 @@ export const Home = () => {
           <div className="details__info">
             <div className="date">
               <div className="year">
-                Year: {year}
+                Year: {activeImage?.year}
               </div>
               <div className="decade">
-                Decade: {decade}s
+                Decade: {activeImage?.decade}
               </div>
             </div>
             <div className="line"></div>

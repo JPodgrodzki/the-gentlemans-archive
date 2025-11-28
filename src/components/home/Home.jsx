@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import './home.css';
-import logo from '../../assets/images/logo.png';
 import close from '../../assets/images/close.png';
 import imagesData from '../../assets/database/database.json';
 
@@ -12,8 +11,7 @@ const imageMap = imageContext.keys().reduce((map, key) => {
     return map;
 }, {});
 
-export const Home = () => {
-  const [year, setYear] = useState(1900);
+export const Home = ({ year }) => {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState(['fashionplate', 'photograph']);
   const [activeImage, setActiveImage] = useState(null);
@@ -49,22 +47,6 @@ export const Home = () => {
 
   return (
     <div className='home'>
-      <div className="header">
-        <div className="logo">
-        <img src={logo} alt="" className='logo__img' />
-        </div>
-        <div className="slider">
-          <input type="range" min="1850" max='1949' value={year} className='range' onChange={event => setYear(Number(event.target.value))} />
-          <div className="time">
-            <div className="year">
-              Year: {year}
-            </div>
-            <div className="decade">
-              Decade: {decade}s
-            </div>
-          </div>
-        </div>
-      </div>
       <div className={`filters ${filtersOpen ? 'filters__open' : ''}`}>
         <div className="container">
           <div className="breadscrumbs">

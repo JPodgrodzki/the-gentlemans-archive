@@ -1,0 +1,42 @@
+.menu {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 30vw;
+    height: calc(100vh - 80px);
+    z-index: 2;
+
+    transform: translateX(100%);
+    transition: transform 0.2s ease;
+}
+
+.links {
+    height: calc(100vh - 160px);
+    padding: 20px 80px;
+}
+
+.link {
+    font-size: 20px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.socials {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(48, 45, 43);
+    padding: 20px 80px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.menu-open {
+    transform: translateX(0);
+}

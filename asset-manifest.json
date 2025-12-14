@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/the-gentlemans-archive/static/css/main.7b2b39ad.css",
+    "main.css": "/the-gentlemans-archive/static/css/main.24721cd3.css",
     "main.js": "/the-gentlemans-archive/static/js/main.e7cbd1c4.js",
     "static/media/1910s9.jpg": "/the-gentlemans-archive/static/media/1910s9.03b678c1010b7b2acd92.jpg",
     "static/media/1850s13.jpg": "/the-gentlemans-archive/static/media/1850s13.3466b8c38de9a3e2b9b2.jpg",
@@ -265,11 +265,11 @@
     "static/media/1920s7.jpg": "/the-gentlemans-archive/static/media/1920s7.cdfe901594254bf9321e.jpg",
     "static/media/1850s14.jpg": "/the-gentlemans-archive/static/media/1850s14.ee1271511c4121dad2dd.jpg",
     "index.html": "/the-gentlemans-archive/index.html",
-    "main.7b2b39ad.css.map": "/the-gentlemans-archive/static/css/main.7b2b39ad.css.map",
+    "main.24721cd3.css.map": "/the-gentlemans-archive/static/css/main.24721cd3.css.map",
     "main.e7cbd1c4.js.map": "/the-gentlemans-archive/static/js/main.e7cbd1c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b2b39ad.css",
+    "static/css/main.24721cd3.css",
     "static/js/main.e7cbd1c4.js"
   ]
 }

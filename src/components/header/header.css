@@ -98,6 +98,23 @@
     .range {
         width: 100%;
     }
+
+    .trinkets {
+        color: var(--main-color);
+        display: flex;
+        gap: 25px;
+        cursor: pointer;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .iconImg {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -107,10 +124,7 @@
 
     .header {
         width: 100%;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 130px;
         position: sticky;
         top: 0;
         z-index: 1;
@@ -119,7 +133,7 @@
 
     .logo {
         text-align: center;
-        width: 150px;
+        width: 120px;
         position: absolute;
         top: 20px;
         left: 20px;
@@ -131,9 +145,14 @@
     }
 
     .slider {
+        position: absolute;
+        top: 70px;
         text-align: center;
-        width: 500px;
+        width: 100vw;
+        height: 60px;
+        padding: 8px 20px;
         margin: 0 auto;
+        background-color: rgb(48, 45, 43);
     }
 
     .time {
@@ -145,5 +164,25 @@
 
     .range {
         width: 100%;
+    }
+
+    .trinkets {
+        color: var(--main-color);
+        display: flex;
+        gap: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .iconImg {
+        width: 35px;
+        height: 35px;
     }
 }

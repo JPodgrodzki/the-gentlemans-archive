@@ -17,7 +17,7 @@ function App() {
       <Overlay menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <BurgerMenu menuOpen={menuOpen} />
       <div className="page">
-        <Home year={year} />
+        <Home year={year}/>
       </div>
     </div>
   );

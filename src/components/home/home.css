@@ -407,7 +407,7 @@
         overflow: hidden;
         transition: height 0.3s ease;
         position: sticky;
-        top: 80px;
+        top: 130px;
         z-index: 1;
     }
 

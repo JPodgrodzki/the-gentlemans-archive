@@ -53,7 +53,7 @@ export const Home = ({ year }) => {
             <div className="arrow" onClick={() => handleChange(filtersOpen)}>
               {filtersOpen ? '<' : '>'}
             </div>
-            <div className="active__filters">
+            <div className={`active__filters ${filtersOpen ? 'active__filters-open' : ''}`}>
               Active filters: 
               {activeFilters.map(filter => {
                 return ` ${filter}`;

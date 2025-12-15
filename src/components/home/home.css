@@ -28,22 +28,37 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-grow: 0;
+    min-width: 0;
 }
 
 .arrow {
     rotate: 90deg;
     width: 20px;
     height: 20px;
+    min-height: 20px;
     border: 1px solid var(--bg-color);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-self: center;
 }
 
 .active__filters {
     font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex-grow: 1;
+}
+
+.active__filters-open {
+    white-space: wrap;
 }
 
 .form {

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import './home.css';
 import close from '../../assets/images/close.png';
 import imagesData from '../../assets/database/database.json';
@@ -15,7 +15,29 @@ export const Home = ({ year }) => {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState(['fashionplate', 'photograph']);
   const [activeImage, setActiveImage] = useState(null);
+  const [scrolled, setScrolled] = useState(null)
+  const [lastScrollY, setLastScrollY] = useState(0);
   const decade = Math.floor(year / 10) * 10;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setScrolled('down');
+      } else if (currentScrollY < lastScrollY) {
+        setScrolled('up');
+      }
+
+      setLastScrollY(currentScrollY);
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    };
+  }, [lastScrollY])
 
   const filteredImages = useMemo(() => {
     const imagesWithPaths = imagesData.map(item => ({
@@ -47,14 +69,14 @@ export const Home = ({ year }) => {
 
   return (
     <div className='home'>
-      <div className={`filters ${filtersOpen ? 'filters__open' : ''}`}>
+      <div className={`filters ${filtersOpen ? 'filters__open' : ''} ${!filtersOpen && scrolled === 'up' ? 'filters__out' : ''} ${!filtersOpen && scrolled === 'down' ? 'filters__in' : ''}`}>
         <div className="container">
           <div className="breadscrumbs">
             <div className="arrow" onClick={() => handleChange(filtersOpen)}>
               {filtersOpen ? '<' : '>'}
             </div>
             <div className={`active__filters ${filtersOpen ? 'active__filters-open' : ''}`}>
-              Active filters: 
+              Active filters:
               {activeFilters.map(filter => {
                 return ` ${filter}`;
               })}

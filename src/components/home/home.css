@@ -420,7 +420,7 @@
         background-color: var(--main-color);
         color: var(--bg-color);
         overflow: hidden;
-        transition: height 0.3s ease;
+        transition: height 0.3s ease, top 0.3s ease;
         position: sticky;
         top: 130px;
         z-index: 1;
@@ -433,6 +433,10 @@
 
     .filters__open {
         height: 400px;
+    }
+
+    .filters__in {
+        top: 80px;
     }
 
     .breadscrumbs {

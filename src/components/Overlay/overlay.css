@@ -16,3 +16,24 @@
     pointer-events: all;
     cursor: pointer;
 }
+
+@media (max-width: 650px) {
+    .overlay {
+        background-color: rgba(255, 255, 255, 0);
+        height: 100vh;
+        position: fixed;
+        width: 100vw;
+        top: 70px;
+        left: 0;
+        z-index: 2;
+
+        transition: background-color 0.3s ease;
+        pointer-events: none;
+    }
+
+    .overlay-visible {
+        background-color: rgba(255, 255, 255, 0.35);
+        pointer-events: all;
+        cursor: pointer;
+    }
+}

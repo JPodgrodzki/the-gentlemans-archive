@@ -13,7 +13,7 @@
 
 .logo {
     text-align: center;
-    width: 150px;
+    width: 110px;
     cursor: pointer;
 }
 
@@ -42,18 +42,18 @@
 .trinkets {
     color: var(--main-color);
     display: flex;
-    gap: 25px;
+    gap: 40px;
     cursor: pointer;
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 .iconImg {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 @media (max-width: 1200px) {
@@ -71,10 +71,7 @@
 
     .logo {
         text-align: center;
-        width: 150px;
-        position: absolute;
-        top: 20px;
-        left: 20px;
+        width: 105px;
         cursor: pointer;
     }
 
@@ -84,7 +81,7 @@
 
     .slider {
         text-align: center;
-        width: 500px;
+        width: 50%;
         margin: 0 auto;
     }
 
@@ -107,13 +104,13 @@
     }
 
     .icon {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .iconImg {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -127,7 +124,7 @@
         height: 130px;
         position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 2;
         background-color: var(--bg-color);
     }
 

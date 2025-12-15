@@ -48,7 +48,7 @@
         position: fixed;
         top: 80px;
         right: 0;
-        width: 30vw;
+        width: 50vw;
         height: calc(100vh - 80px);
         z-index: 3;
 
@@ -59,6 +59,7 @@
     .links {
         height: calc(100vh - 160px);
         padding: 20px 80px;
+        text-align: right;
     }
 
     .link {
@@ -75,6 +76,7 @@
         display: flex;
         gap: 30px;
         align-items: center;
+        justify-content: flex-end;
     }
 
     .icon {

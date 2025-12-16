@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/the-gentlemans-archive/static/css/main.87f777bd.css",
-    "main.js": "/the-gentlemans-archive/static/js/main.83999091.js",
+    "main.css": "/the-gentlemans-archive/static/css/main.9c4b4f62.css",
+    "main.js": "/the-gentlemans-archive/static/js/main.6fedd4a0.js",
     "static/media/1910s9.jpg": "/the-gentlemans-archive/static/media/1910s9.03b678c1010b7b2acd92.jpg",
     "static/media/1850s13.jpg": "/the-gentlemans-archive/static/media/1850s13.3466b8c38de9a3e2b9b2.jpg",
     "static/media/1850s24.jpg": "/the-gentlemans-archive/static/media/1850s24.570e4a6571715341fe73.jpg",
@@ -23,6 +23,7 @@
     "static/media/1890s19.jpg": "/the-gentlemans-archive/static/media/1890s19.1d857075ba2aaa4e2391.jpg",
     "static/media/1850s26.PNG": "/the-gentlemans-archive/static/media/1850s26.66136b7299ce81a52647.PNG",
     "static/media/1850s25.PNG": "/the-gentlemans-archive/static/media/1850s25.d765acd3e63d323ce762.PNG",
+    "static/media/collars.PNG": "/the-gentlemans-archive/static/media/collars.edf0bf6ae5959ab08917.PNG",
     "static/media/1930s24.PNG": "/the-gentlemans-archive/static/media/1930s24.20398158b9230b55790e.PNG",
     "static/media/1920s8.jpg": "/the-gentlemans-archive/static/media/1920s8.908527fd878500a47ea8.jpg",
     "static/media/1890s21.PNG": "/the-gentlemans-archive/static/media/1890s21.42c05ff1eb4331de423f.PNG",
@@ -265,11 +266,11 @@
     "static/media/1920s7.jpg": "/the-gentlemans-archive/static/media/1920s7.cdfe901594254bf9321e.jpg",
     "static/media/1850s14.jpg": "/the-gentlemans-archive/static/media/1850s14.ee1271511c4121dad2dd.jpg",
     "index.html": "/the-gentlemans-archive/index.html",
-    "main.87f777bd.css.map": "/the-gentlemans-archive/static/css/main.87f777bd.css.map",
-    "main.83999091.js.map": "/the-gentlemans-archive/static/js/main.83999091.js.map"
+    "main.9c4b4f62.css.map": "/the-gentlemans-archive/static/css/main.9c4b4f62.css.map",
+    "main.6fedd4a0.js.map": "/the-gentlemans-archive/static/js/main.6fedd4a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.87f777bd.css",
-    "static/js/main.83999091.js"
+    "static/css/main.9c4b4f62.css",
+    "static/js/main.6fedd4a0.js"
   ]
 }

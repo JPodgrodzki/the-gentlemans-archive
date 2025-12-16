@@ -1,15 +1,20 @@
+import { Link } from 'react-router-dom';
 import './burgerMenu.css';
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
-export const BurgerMenu = ({ menuOpen }) => {
+export const BurgerMenu = ({ menuOpen, setMenuOpen }) => {
+    const handleClick = () => {
+        setMenuOpen(false);
+    }
+
     return (
         <div className={`menu ${menuOpen ? 'menu-open' : ''}`}>
             <div className="links">
-                <div className="link">Menu</div>
-                <div className="link">Here</div>
-                <div className="link">Link</div>
-                <div className="link">First</div>
-                <div className="link">Future</div>
+                <Link to='/' className="link" onClick={handleClick}>Home</Link>
+                <Link to='/vademecum' className="link" onClick={handleClick}>Vademecum</Link>
+                <div className="link" onClick={handleClick}>Link</div>
+                <div className="link" onClick={handleClick}>First</div>
+                <div className="link" onClick={handleClick}>Future</div>
             </div>
             <div className="socials">
                 <a href='https://www.instagram.com/james_borough?igsh=bmxjdDh3dm92c3ly' target='_blank' rel='noopener noreferrer' className="icon">

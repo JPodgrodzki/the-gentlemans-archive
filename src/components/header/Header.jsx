@@ -1,6 +1,7 @@
 import logo from '../../assets/images/logo.png';
 import './header.css';
 import { IoMdMenu, IoMdSearch, IoMdClose  } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 export const Header = ({ year, setYear, menuOpen, setMenuOpen }) => {
     const decade = Math.floor(year / 10) * 10;
@@ -11,9 +12,9 @@ export const Header = ({ year, setYear, menuOpen, setMenuOpen }) => {
 
     return (
         <div className="header">
-            <div className="logo">
+            <Link to='/' className="logo">
                 <img src={logo} alt="" className='logo__img' />
-            </div>
+            </Link>
             <div className="slider">
                 <input type="range" min="1850" max='1949' value={year} className='range' onChange={event => setYear(Number(event.target.value))} />
                 <div className="time">

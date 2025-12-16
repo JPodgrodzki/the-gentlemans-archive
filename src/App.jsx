@@ -6,6 +6,7 @@ import { Home } from './components/home/Home';
 import { Header } from './components/header/Header';
 import { BurgerMenu } from './components/burgerMenu/BurgerMenu';
 import { Overlay } from './components/Overlay/Overlay';
+import { Vademecum } from './components/vademecum/Vademecum';
 
 function App() {
   const [year, setYear] = useState(1900);
@@ -15,9 +16,13 @@ function App() {
     <div className="App">
       <Header year={year} setYear={setYear} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Overlay menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <BurgerMenu menuOpen={menuOpen} />
+      <BurgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="page">
-        <Home year={year}/>
+        <Routes>
+          <Route path='/' element={<Home year={year}/>} />
+          <Route path='/vademecum' element={<Vademecum year={year}/>} />
+        </Routes>
+        
       </div>
     </div>
   );

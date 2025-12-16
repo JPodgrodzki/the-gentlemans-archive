@@ -1717,16 +1717,17 @@
   },
   {
     "image": "1900s1.jpg",
-    "year": "Unknown",
+    "year": "Circa 1910",
     "decade": "1900s",
     "id": 133,
     "type": "photograph",
-    "title": "",
-    "description": "",
-    "formality": "",
-    "daytime": "",
-    "yeartime": "",
-    "items": []
+    "title": "Studio photograph of three edwardian men",
+    "description": "On this photo we can see three dapper men in typical everyday attire from late 1900s or early 1910s. There's a range of different accessories here, bowties and a tie, watch chains, boutonieres and pocket squares or handkerchieves.",
+    "formality": ["formal", "casual"],
+    "daytime": ["morning", "evening"],
+    "yeartime": ["spring", "autumn", "winter"],
+    "items": [],
+    "source": ""
   },
   {
     "image": "1900s10.png",
@@ -1864,11 +1865,11 @@
     "decade": "1900s",
     "id": 144,
     "type": "photograph",
-    "title": "",
-    "description": "",
-    "formality": "",
-    "daytime": "",
-    "yeartime": "",
+    "title": "Joseph Pujol in morning attire",
+    "description": "In this photo we can see a typical edwardian morning attire consisting of morning coat and trousers, a stiff club collar and a tie. Joseph is wearing a shiny oxfords and a pocket square.",
+    "formality": ["formal"],
+    "daytime": ["morning"],
+    "yeartime": ["autumn", "spring", "spring", "summer"],
     "items": []
   },
   {

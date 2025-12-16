@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './home.css';
-import close from '../../assets/images/close.png';
 import imagesData from '../../assets/database/database.json';
+import { Details } from './details/Details';
 
 const imageContext = require.context('../../assets/database/images', false, /\.(jpe?g|png|svg|webp)$/i);
 
@@ -152,28 +152,7 @@ export const Home = ({ year }) => {
             )
           })}
         </div>
-        <div className={`details ${activeImage && 'details-active'}`}>
-          <div className="details__photo">
-            <img src={activeImage?.image} alt="" className='details__img' />
-          </div>
-          <div className={`close ${activeImage && 'close-active'}`} onClick={() => setActiveImage(null)}>
-            <img src={close} alt="" className='close__sign' />
-          </div>
-          <div className="details__info">
-            <div className="date">
-              <div className="year">
-                Year: {activeImage?.year}
-              </div>
-              <div className="decade">
-                Decade: {activeImage?.decade}
-              </div>
-            </div>
-            <div className="line"></div>
-            <div className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde facilis obcaecati recusandae, similique delectus amet voluptatum asperiores omnis doloribus, molestiae deserunt ad temporibus suscipit, ullam magni rerum fuga maxime minus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque harum, doloremque quos commodi ipsum magni voluptatibus iste ex assumenda natus sed dicta minima temporibus dolore quibusdam consectetur earum totam eligendi tempora at modi dolorum? Ipsum vero nemo officia ad repellat eius nesciunt adipisci ab tenetur harum! Omnis exercitationem corporis quaerat.
-            </div>
-          </div>
-        </div>
+        <Details activeImage={activeImage} setActiveImage={setActiveImage} />
       </div>
     </div>
   )

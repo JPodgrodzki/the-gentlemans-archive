@@ -12,9 +12,6 @@ export const BurgerMenu = ({ menuOpen, setMenuOpen }) => {
             <div className="links">
                 <Link to='/' className="link" onClick={handleClick}>Home</Link>
                 <Link to='/vademecum' className="link" onClick={handleClick}>Vademecum</Link>
-                <div className="link" onClick={handleClick}>Link</div>
-                <div className="link" onClick={handleClick}>First</div>
-                <div className="link" onClick={handleClick}>Future</div>
             </div>
             <div className="socials">
                 <a href='https://www.instagram.com/james_borough?igsh=bmxjdDh3dm92c3ly' target='_blank' rel='noopener noreferrer' className="icon">

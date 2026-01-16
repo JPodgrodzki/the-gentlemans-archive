@@ -106,6 +106,10 @@ export const Home = ({ year }) => {
                 <div className={`box ${activeFilters.includes('morning') ? 'box-active' : ''}`}></div>
                 <div className="name">morning</div>
               </div>
+              <div className="option" onClick={() => handleActive('day')}>
+                <div className={`box ${activeFilters.includes('day') ? 'box-active' : ''}`}></div>
+                <div className="name">day</div>
+              </div>
               <div className="option" onClick={() => handleActive('evening')}>
                 <div className={`box ${activeFilters.includes('evening') ? 'box-active' : ''}`}></div>
                 <div className="name">evening</div>
